@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isBattleWin: 0
   imageSprite: {fileID: 0}
+  activeShops: 0100000101010000010101

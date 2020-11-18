@@ -12,4 +12,5 @@ public class Level_Data : ScriptableObject
     public bool _isBattleWin = false;
     [HideInInspector]
     public SpriteRenderer imageSprite;
+    public List<bool> activeShops = new List<bool>();
 }

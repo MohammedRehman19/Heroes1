@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MiniMapController.cs" />
     <Compile Include="Assets\Scripts\AutoStretchSprite.cs" />
     <Compile Include="Assets\Scripts\CityController.cs" />
     <Compile Include="Assets\Scripts\Database.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\TimeZone.cs" />
     <Compile Include="Assets\Scripts\VillageInfo.cs" />
     <Compile Include="Assets\Scripts\playerController.cs" />
+    <Compile Include="Assets\StartGame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsNoiseTexPE.cs" />
     <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsPE.cs" />
     <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\EffectBase.cs" />
+    <Compile Include="Assets\popUpDestroy.cs" />
     <None Include="Assets\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />
     <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2Fogs.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

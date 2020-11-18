@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Database
   m_EditorClassIdentifier: 
   Current_Level: 1
-  Current_Endurance: 26
-  Current_ProgressBar_Level: 30
-  currentPos: {x: -1.1978928, y: 0, z: 0}
+  Current_Endurance: 2
+  Current_ProgressBar_Level: 0
+  currentPos: {x: 0, y: 0, z: 0}

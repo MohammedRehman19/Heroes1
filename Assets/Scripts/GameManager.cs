@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+   
     [Header("Database")]
     public Database Current_Database;
 
@@ -14,7 +16,7 @@ public class GameManager : MonoBehaviour
     [Header("MAP_MOVEMENT")]
     public float speed = 1;
     public GameObject Player;
-
+    public Camera PlayerChildCamera;
     private GameObject targetpos;
     public GameObject MainMenuPanel, BattlePanel, OkPanel, VillagePanel;
 
@@ -48,11 +50,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentTimezone;
 
 
+
     public static GameManager Instance;
 
     private void Awake()
     {
-//        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
         if (Instance != null)
         {
@@ -73,8 +76,8 @@ public class GameManager : MonoBehaviour
         updateDbLvl(0);
         updateDbEnd(0);
         updateDbSliderValue(0);
-        
-        Player.transform.position = Current_Database.currentPos;
+
+     //   Player.transform.position = new Vector3(-1.944226f,0,0);
 
         totalHpEnemy = int.Parse(Total_CalcaulationEnemy_Hp.text.ToString());
         totalATKEnemy = int.Parse(Total_CalcaulationEnemy_ATK.text.ToString());
@@ -106,18 +109,23 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+        Vector3 pos = Camera.main.WorldToScreenPoint(Player.transform.position);
+
 
 
         if (Input.GetMouseButtonDown(0) && !_buttonDown)
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+          
+            Vector3 mousePos = PlayerChildCamera.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-                //  Debug.Log(hit.collider.gameObject.name);
+              //    Debug.Log(hit.collider.gameObject.name);
                 targetpos = hit.collider.gameObject;
+               
                 // targetpos.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 int days = Mathf.RoundToInt(Vector2.Distance(Player.transform.position, targetpos.transform.position));
                 //      days -= 1;
@@ -260,7 +268,7 @@ public class GameManager : MonoBehaviour
         if (targetpos.GetComponent<VillageInfo>().Level_info._isBattleWin)
         {
 
-            VillagePanel.SetActive(true);
+            OpenCity();
         }
         else
         {
@@ -276,6 +284,11 @@ public class GameManager : MonoBehaviour
         updateDbEnd(-temp_EnduranceRequiredValue);
     }
 
+    public void OpenCity()
+    {
+        VillagePanel.SetActive(true);
+        VillagePanel.GetComponent<CityController>().activeShopFtn(targetpos.GetComponent<VillageInfo>().Level_info.activeShops);
+    }
     public void updateDbEnd(int UpdateValueEnd)
     {
         Current_Database.Current_Endurance += UpdateValueEnd;
@@ -308,7 +321,7 @@ public class GameManager : MonoBehaviour
     public void LoadValue_info()
     {
         Current_Database.Current_Level = PlayerPrefs.GetInt("CurrentLevel", 1);
-        Current_Database.Current_Endurance = PlayerPrefs.GetInt("CurrentEndurance", 2);
+        Current_Database.Current_Endurance = PlayerPrefs.GetInt("CurrentEndurance", 8);
         Current_Database.Current_ProgressBar_Level = PlayerPrefs.GetInt("CurrentProgressBar", 0);
         Current_Database.currentPos= new Vector3(PlayerPrefs.GetFloat("posx", 0), PlayerPrefs.GetFloat("posy", 0),0);
        
@@ -348,7 +361,7 @@ public class GameManager : MonoBehaviour
         {
         
             MainMenuPanel.SetActive(false);
-            VillagePanel.SetActive(true);
+            OpenCity();
             updateDbEnd(15);
             updateDbSliderValue(30);
 
@@ -364,8 +377,8 @@ public class GameManager : MonoBehaviour
     {
         
        
-        MainMenuPanel.SetActive(true);
-        BattleMenuPanel.SetActive(false);
+    //    MainMenuPanel.SetActive(true);
+    //    BattleMenuPanel.SetActive(false);
         UpgradeMenuPanel.SetActive(true);
     }
 
