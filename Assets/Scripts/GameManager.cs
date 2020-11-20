@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     [Header("Upgrade_Panel")]
     public GameObject UpgradeMenuPanel;
     public TextMeshProUGUI upgradeStatus;
+    public List<TextMeshProUGUI> ListofUpgradeObject = new List<TextMeshProUGUI>();
+
+
     [Header("UI")]
     public Slider sliderHere;
     public TextMeshProUGUI LevelText;
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+     //   PlayerPrefs.DeleteAll();
 
         if (Instance != null)
         {
@@ -90,8 +93,11 @@ public class GameManager : MonoBehaviour
         CurrentDay = GetDay.CurrentDay(GetDay.DayIndex);
         currentTimezone.text = CurrentDay;
         InvokeRepeating("daySwitcher", 20, 20);
+       
 
     }
+
+    
 
     void daySwitcher()
     {
@@ -153,6 +159,17 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+
+        // UPGradeWork HERE
+
+        if (ListofUpgradeObject.Count < 4)
+            return;
+
+        ListofUpgradeObject[0].text = "Gold :" + Current_Database.Current_Gold.ToString();
+        ListofUpgradeObject[1].text = "Weapons :" + Current_Database.Current_Weapon.ToString();
+        ListofUpgradeObject[2].text = "Food :" + Current_Database.Current_Food.ToString();
+        ListofUpgradeObject[3].text = "Coal :" + Current_Database.Current_Coal.ToString();
     }
 
     public void UpdateSlider()

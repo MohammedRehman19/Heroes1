@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CityController : MonoBehaviour
 {
 
-    public TextMeshProUGUI SelectedText;
+   // public TextMeshProUGUI SelectedText;
 
     //public GameObject listofShopPt;
     //public GameObject listofResourcePt;
@@ -17,30 +17,19 @@ public class CityController : MonoBehaviour
 
     private bool _firstLevel = false;
 
-    public RectTransform PrefabPop;
-    public RectTransform ParentPop;
-
+   
     private void OnEnable()
     {
       //  ClickedButton(0);
     }
 
-
-    public void ClonePopup(string popUpText)
-    {
-        Debug.Log("Clone");
-        RectTransform cloneText = Instantiate(PrefabPop,ParentPop.position,Quaternion.identity);
-        cloneText.GetComponent<TextMeshProUGUI>().text = popUpText;
-        cloneText.SetParent(ParentPop);
-
-    }
-
+  
     public void ClickedButton(int index)
     {
         clearClickHere();
 
         ListAllshop[index].GetComponent<Image>().color = new Color(0.65f,1,0,1);
-        SelectedText.text =  "SELECTED SHOP : " + ListAllshop[index].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+      //  SelectedText.text =  "SELECTED SHOP : " + ListAllshop[index].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
         ListAllResource[index].gameObject.SetActive(true);
     }
 
@@ -76,5 +65,8 @@ public class CityController : MonoBehaviour
             }
         }
     }
+
+
+   
 
 }
