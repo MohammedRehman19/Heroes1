@@ -381,7 +381,7 @@ public class GameManager : MonoBehaviour
             OpenCity();
             updateDbEnd(15);
             updateDbSliderValue(30);
-
+            GetComponent<CityManager>().resoucresCall();
 
         }
         else

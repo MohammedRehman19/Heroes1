@@ -29,9 +29,15 @@ public class CityManager : MonoBehaviour
 
         if (GameManager.Instance.Current_Database._ResourcesCollectingAvaliable != 1)
             return;
+        resoucresCall();
+       
+    }
 
+
+    public void resoucresCall()
+    {
         int tempValue = GameManager.Instance.Current_Database.Current_Resources;
-        int randValue = Random.Range(9, 101);
+        int randValue = Random.Range(10, 101);
         tempValue += randValue;
         PlayerPrefs.SetInt("Resources", tempValue);
         ClonePopup("You Got " + randValue + " Resources");

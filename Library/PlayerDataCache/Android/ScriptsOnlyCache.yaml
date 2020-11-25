@@ -1,10 +1,21 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - PlayerPrefsEditor
     Assembly-CSharp.dll:
+    - Admanager
     - AutoStretchSprite
+    - CityController
+    - CityManager
+    - Database
     - GameManager
-    - Healthbar
+    - Level_Data
+    - MiniMapController
+    - StartGame
+    - TimeZone
     - VillageInfo
+    - playerController
+    - popUpDestroy
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -40,8 +51,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
-    - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -65,6 +77,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -72,45 +90,65 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11258}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11280}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11626}
+      Script: {instanceID: 11450}
     - Class: 114
-      Script: {instanceID: 12292}
+      Script: {instanceID: 11494}
     - Class: 114
-      Script: {instanceID: 12346}
+      Script: {instanceID: 11654}
     - Class: 114
-      Script: {instanceID: 12954}
+      Script: {instanceID: 11856}
     - Class: 114
-      Script: {instanceID: 13008}
+      Script: {instanceID: 12146}
     - Class: 114
-      Script: {instanceID: 13116}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 13154}
+      Script: {instanceID: 12376}
     - Class: 114
-      Script: {instanceID: 13356}
+      Script: {instanceID: 12532}
     - Class: 114
-      Script: {instanceID: 13360}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 13380}
+      Script: {instanceID: 12848}
     - Class: 114
-      Script: {instanceID: 13692}
+      Script: {instanceID: 13042}
     - Class: 114
-      Script: {instanceID: 13796}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13978}
+      Script: {instanceID: 13152}
     - Class: 114
-      Script: {instanceID: 14088}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 14264}
+      Script: {instanceID: 13220}
     - Class: 114
-      Script: {instanceID: 14434}
+      Script: {instanceID: 13394}
     - Class: 114
-      Script: {instanceID: 19934}
+      Script: {instanceID: 13398}
+    - Class: 114
+      Script: {instanceID: 13402}
+    - Class: 114
+      Script: {instanceID: 13420}
+    - Class: 114
+      Script: {instanceID: 13580}
+    - Class: 114
+      Script: {instanceID: 13736}
+    - Class: 114
+      Script: {instanceID: 13816}
+    - Class: 114
+      Script: {instanceID: 13844}
+    - Class: 114
+      Script: {instanceID: 14026}
+    - Class: 114
+      Script: {instanceID: 14136}
+    - Class: 114
+      Script: {instanceID: 14312}
+    - Class: 114
+      Script: {instanceID: 14482}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,6 +167,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
@@ -142,6 +182,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 7d6125b1e67a86456a3b7626da93ad3a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimeZone
   - hash:
       serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
@@ -162,6 +208,12 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 417cf0a4bf11c4ad260ad8f22e74507c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Level_Data
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -172,6 +224,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: popUpDestroy
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -196,6 +254,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: bc3b7d74a35092642bfc70588550997a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UB.Simple2dWeatherEffects.Standard
+    className: D2FogsPE
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -274,6 +338,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 1f4f388600fcb9ce454d77589e64948c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Database
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -408,6 +478,18 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
+      Hash: 1643c37443ef883447d657e77e91ed16
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CityController
+  - hash:
+      serializedVersion: 2
+      Hash: eb7e176bb72197b5ac1aff571e212526
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VillageInfo
+  - hash:
+      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -444,16 +526,16 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: a2cff8e9b97042c8f649f37a1d8dcdd5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Admanager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
-  - hash:
-      serializedVersion: 2
-      Hash: aaa15111f4ac503f5c868ce60dab305e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Healthbar
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -472,6 +554,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UB.Simple2dWeatherEffects.Standard
+    className: EffectBase
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
@@ -496,6 +584,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: d199a365845858d7528f2444384d5934
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CityManager
   - hash:
       serializedVersion: 2
       Hash: 11319334e5365797f8056694f9b5dae4
@@ -538,6 +632,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: playerController
   - hash:
       serializedVersion: 2
       Hash: 28cfb4bd305dd11c6326cc3ee7c14138
@@ -600,6 +700,12 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
+      Hash: d4c7f90e36b6f4231b59715bf93fcd51
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartGame
+  - hash:
+      serializedVersion: 2
       Hash: b6514f552bd2ee9e736a5678aa7f7de3
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -624,10 +730,22 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: ff0671e5e3cea3c7709d312d5722ee30
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UB.Simple2dWeatherEffects.Standard
+    className: D2FogsNoiseTexPE
+  - hash:
+      serializedVersion: 2
       Hash: 27e5341178f188b89bdc6495710b590c
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark01_UGUI
+  - hash:
+      serializedVersion: 2
+      Hash: a00a8c62deb7f5f1c03ec67207401c3c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MiniMapController
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -684,7 +802,7 @@ ScriptsOnlyBuild:
     className: TMP_UiFrameRateCounter
   - hash:
       serializedVersion: 2
-      Hash: ba8d99ecf221e2104f879a7d0eb1d1d2
+      Hash: 0bd46120dbac5b79cfdd67459da9d06a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -832,12 +950,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 707a4664ed725b62b46393831b46e3f8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: VillageInfo
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
